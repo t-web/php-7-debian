@@ -28,9 +28,10 @@ cd php-src
 git checkout PHP-7.0.0
 git pull
 ./buildconf --force
-
+#增加   --with-iconv=/usr/local/libiconv\ 修复undefined reference to `libiconv_open' 错误
 CONFIGURE_STRING="--prefix=/usr/local/php7 \
                   --with-config-file-scan-dir=/usr/local/php7/etc/conf.d \
+                 --with-iconv=/usr/local/libiconv\
                   --without-pear \
                   --enable-bcmath \
                   --with-bz2 \
